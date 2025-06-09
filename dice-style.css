@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Main Setup & Background
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #000; /* Solid black background */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   Content Container
+   ========================================================================== */
+.container {
+    background-color: rgba(20, 20, 20, 0.75);
+    padding: 2em;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 90%;
+    width: 420px;
+
+    /* --- REVISED BORDER --- */
+    /* Increased thickness to 3px and made it much more opaque (0.9) */
+    border: 3px solid rgba(0, 183, 255, 0.9);
+
+    /* --- REVISED GLOW --- */
+    /* Made the glow larger (35px) and more opaque (0.5) */
+    box-shadow: 0 0 35px rgba(0, 183, 255, 0.5);
+}
+
+/* ==========================================================================
+   Typography (Headers, Text, Footer)
+   ========================================================================== */
+header, footer {
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+h1 { 
+    font-size: 2.5em; 
+    color: #00B7FF;
+    margin-bottom: 0; 
+    font-weight: 600;
+}
+
+h2 { 
+    font-size: 1.5em; 
+    margin-top: 0; 
+    font-weight: normal; 
+    opacity: 0.9;
+}
+
+p.instructions {
+    line-height: 1.5;
+}
+
+footer { 
+    margin-top: 2em; 
+    font-size: 0.8em; 
+    opacity: 0.7; 
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   The Interactive Dice Elements
+   ========================================================================== */
+#dice-container { 
+    padding: 2em 0; 
+    display: flex;
+    justify-content: center;
+}
+
+#dice-face {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+#dice-face:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+#dice-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Result Text & Animation
+   ========================================================================== */
+#roll-result { 
+    font-size: 1.2em; 
+    font-style: italic;
+    min-height: 1.5em;
+}
+
+.rolling {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
